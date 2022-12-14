@@ -7,13 +7,13 @@ class MeuAplicativo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Hello",
+      title: "Cripto",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
 
       ),
-      home: const MoedasPage(),
+      home: MoedasPage(),
     );
   }
 }
