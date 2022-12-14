@@ -18,13 +18,30 @@ class _MoedasPageState extends State<MoedasPage> {
 
   List<Moeda> selecionadas = [];
 
+  appBarDinamica() {
+    if (selecionadas.isEmpty) {
+      return AppBar(
+        title: const Text('Cripto'),
+      );
+    } else {
+      return AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: (() {  
+            setState(() {
+               selecionadas = [];
+            });
+          }),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cripto', textAlign: TextAlign.center),
-      ),
+      appBar:appBarDinamica(),
       body: ListView.separated(
         itemBuilder: (BuildContext context, int moeda) {
           return ListTile(
