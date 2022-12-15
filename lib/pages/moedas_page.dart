@@ -63,7 +63,7 @@ class _MoedasPageState extends State<MoedasPage> {
               title: Text(
                 tabela[moeda].nome,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 20,
                   fontWeight: FontWeight.w500,
                 ),
               ),
