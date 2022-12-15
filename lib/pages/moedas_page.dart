@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/models/moeda.dart';
+import 'package:hello_world/pages/moedas_detalhes_page.dart';
 import 'package:hello_world/repositories/moeda_repository.dart';
 import 'package:intl/intl.dart';
 
@@ -37,6 +38,11 @@ class _MoedasPageState extends State<MoedasPage> {
     }
   }
 
+  mostrarDetalhes(Moeda moeda) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (_) => MoedaDetalhesPage(moeda: moeda)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,6 +77,7 @@ class _MoedasPageState extends State<MoedasPage> {
                       : selecionadas.add(tabela[moeda]);
                 });
               },
+              onTap: (() => mostrarDetalhes(tabela[moeda])),
             );
           },
           padding: const EdgeInsets.all(16),
@@ -78,18 +85,16 @@ class _MoedasPageState extends State<MoedasPage> {
           itemCount: tabela.length,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: selecionadas.isNotEmpty 
-        ? FloatingActionButton.extended(
-            onPressed: () {}, 
-            icon: const Icon(Icons.star),
-            label: const Text(
-              'FAVORITAR', 
-              style: TextStyle(
-                letterSpacing: 0,
-                fontWeight: FontWeight.bold
-            ),),
-        )
-        : null
-      );
+        floatingActionButton: selecionadas.isNotEmpty
+            ? FloatingActionButton.extended(
+                onPressed: () {},
+                icon: const Icon(Icons.star),
+                label: const Text(
+                  'FAVORITAR',
+                  style:
+                      TextStyle(letterSpacing: 0, fontWeight: FontWeight.bold),
+                ),
+              )
+            : null);
   }
 }
