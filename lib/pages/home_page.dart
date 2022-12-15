@@ -37,13 +37,21 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: paginaAtual,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Todas'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: 'Favoritas'),
+            icon: Icon(Icons.list), 
+            label: 'Todas'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favoritas'
+          ),
         ],
         onTap: (pagina) {
-          pc.animateToPage(pagina,
-              duration: const Duration(milliseconds: 400), curve: Curves.ease);
+          pc.animateToPage(
+            pagina,
+            duration: const Duration(milliseconds: 400), 
+            curve: Curves.ease
+          );
         },
       ),
     );
