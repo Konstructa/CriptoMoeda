@@ -38,7 +38,7 @@ class DB {
 
   String get _carteira => '''
     CREATE TABLE carteira (
-      sigla TEXT PRIMARY KEY AUTOINCREMENT,
+      sigla TEXT PRIMARY KEY,
       moeda TEXT,
       quantidade TEXT
     );
