@@ -18,7 +18,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
   Widget build(BuildContext context) {
     final conta = context.watch<ContaRepository>();
 
-    final loc = context.watch<AppSettings>().locale;
+    final loc = context.read<AppSettings>().locale;
 
     final real =
         NumberFormat.currency(locale: loc['locale'], name: loc['name']);
