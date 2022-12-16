@@ -115,12 +115,9 @@ class _MoedasPageState extends State<MoedasPage> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  if (favoritas.lista.contains(tabela[moeda]))
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(Icons.star_border_purple500,
-                          color: Colors.blueAccent, size: 10),
-                    ),
+                  if (favoritas.lista
+                      .any((fav) => fav.sigla == tabela[moeda].sigla))
+                    const Icon(Icons.circle, color: Colors.amber, size: 8)
                 ],
               ),
               trailing: Text(real.format(tabela[moeda].preco)),
